@@ -13,6 +13,7 @@ export default {
     extend: {
       fontFamily: {
         sora: ["Sora", "sans-serif"],
+        serif: ['"Playfair Display"', "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -73,12 +74,23 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-14px)" },
         },
+        blob: {
+          "0%, 100%": { transform: "translate(0px, 0px) scale(1)" },
+          "33%": { transform: "translate(50px, -40px) scale(1.18)" },
+          "66%": { transform: "translate(-40px, 30px) scale(0.9)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
         "gradient-pan": "gradient-pan 8s ease infinite",
         float: "float 7s ease-in-out infinite",
+        blob: "blob 16s ease-in-out infinite",
+        marquee: "marquee 32s linear infinite",
       },
     },
   },

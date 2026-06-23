@@ -59,7 +59,7 @@ export function Contact() {
           {/* info */}
           <div>
             <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Contact Us</p>
+              <p className="eyebrow-line text-xs font-semibold uppercase tracking-[0.2em] text-primary">Contact Us</p>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">

@@ -1,4 +1,7 @@
-import { PhoenixMark } from "./Logo"
+import { Link } from "react-router-dom"
+import logoUrl from "../assets/logo.png"
+import { SectionLink } from "./SectionLink"
+import { SERVICES } from "../data/services"
 
 const SOCIALS = [
   {
@@ -23,25 +26,17 @@ const SOCIALS = [
   },
 ]
 
-const LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "NLP Workshops", href: "#nlp" },
-  { label: "About", href: "#about" },
-  { label: "Who We Serve", href: "#audience" },
-]
-
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="bg-background">
+      {/* ember gradient top accent */}
+      <div className="h-1 w-full bg-gradient-to-r from-primary via-amber-500 to-primary" />
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-12">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-lg bg-secondary">
-                <PhoenixMark className="h-5 w-5" />
-              </span>
-              <span className="text-lg font-semibold text-foreground">Phoenixx Edu Factory</span>
-            </div>
+            <Link to="/" aria-label="Phoenixx Edu Factory home" className="inline-flex">
+              <img src={logoUrl} alt="Phoenixx Edu Factory" className="h-11 w-auto" />
+            </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               A corporate training institute dedicated to fostering professional growth and
               organizational excellence.
@@ -63,11 +58,16 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Explore</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Services</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {LINKS.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} className="text-muted-foreground transition-colors hover:text-primary">{l.label}</a>
+              {SERVICES.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    to={`/services/${s.slug}`}
+                    className="inline-block text-muted-foreground transition-all hover:translate-x-1 hover:text-primary"
+                  >
+                    {s.title}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,3 +1,5 @@
+import { HeroBackdrop } from "./HeroBackdrop"
+
 /** Branded animated background — used as the hero's base layer and Spline fallback. */
 export function AnimatedBackground() {
   return (
@@ -13,6 +15,8 @@ export function AnimatedBackground() {
       />
       {/* faint grid */}
       <div className="absolute inset-0 bg-grid-faint opacity-60" />
+      {/* theme-adaptive branded network/growth motif — recolors per theme */}
+      <HeroBackdrop className="absolute inset-0 h-full w-full" />
       {/* floating orbs — blur-2xl + will-change keeps these on the GPU's
           compositor layer so they don't trigger expensive per-frame repaints */}
       <div className="absolute left-[12%] top-[28%] h-40 w-40 rounded-full bg-primary/20 blur-2xl animate-float [will-change:transform]" />

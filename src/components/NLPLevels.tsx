@@ -42,7 +42,7 @@ export function NLPLevels() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">NLP Workshops</p>
+            <p className="eyebrow-line text-xs font-semibold uppercase tracking-[0.2em] text-primary">NLP Workshops</p>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">

@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom"
 import { cn } from "@/lib/utils"
+import logoUrl from "../assets/logo.png"
 
 export function PhoenixMark({ className }: { className?: string }) {
   return (
@@ -25,33 +27,20 @@ export function PhoenixMark({ className }: { className?: string }) {
 
 export function Logo({ className, onDark = false }: { className?: string; onDark?: boolean }) {
   return (
-    <a href="#home" className={cn("flex items-center gap-2.5 group", className)} aria-label="Phoenixx Edu Factory home">
-      <span
+    <Link
+      to="/"
+      className={cn("inline-flex items-center group", className)}
+      aria-label="Phoenixx Edu Factory home"
+    >
+      <img
+        src={logoUrl}
+        alt="Phoenixx Edu Factory"
         className={cn(
-          "grid h-9 w-9 place-items-center rounded-lg transition-transform duration-200 group-hover:-translate-y-0.5",
-          onDark ? "bg-white/10" : "bg-secondary"
+          "h-9 w-auto transition-transform duration-200 group-hover:-translate-y-0.5 md:h-10",
+          // Lift the logo off the hero photo while the nav is transparent at the top.
+          onDark && "drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
         )}
-      >
-        <PhoenixMark className="h-5 w-5" />
-      </span>
-      <span className="leading-none">
-        <span
-          className={cn(
-            "block text-base font-semibold tracking-tight",
-            onDark ? "text-white" : "text-foreground"
-          )}
-        >
-          PHOENIXX<span className="text-primary">.</span>
-        </span>
-        <span
-          className={cn(
-            "block text-[9px] font-medium uppercase tracking-[0.22em]",
-            onDark ? "text-white/60" : "text-muted-foreground"
-          )}
-        >
-          Edu Factory
-        </span>
-      </span>
-    </a>
+      />
+    </Link>
   )
 }

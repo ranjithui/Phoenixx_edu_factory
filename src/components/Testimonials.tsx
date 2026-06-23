@@ -31,7 +31,7 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Stories of Growth</p>
+            <p className="eyebrow-line text-xs font-semibold uppercase tracking-[0.2em] text-primary">Stories of Growth</p>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
@@ -43,7 +43,7 @@ export function Testimonials() {
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.name} delay={0.06 * i}>
-              <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-7">
+              <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_45px_-22px_hsl(24_95%_53%/0.4)]">
                 <div className="flex gap-1 text-primary" aria-label="5 out of 5 stars">
                   {Array.from({ length: 5 }).map((_, s) => (
                     <Star key={s} className="h-4 w-4 fill-current" />
