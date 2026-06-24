@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import logoUrl from "../assets/logo.png"
-import { SectionLink } from "./SectionLink"
 import { SERVICES } from "../data/services"
 
 const SOCIALS = [
