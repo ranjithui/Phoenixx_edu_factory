@@ -8,12 +8,12 @@ import { Reveal } from "./Reveal"
  * src/assets/ and import them, or use /public paths).
  */
 const LOGOS = [
-  { name: "NovaTech", icon: Hexagon },
+  { name: "TeaserTech", icon: Hexagon },
   { name: "Brightpath", icon: Aperture },
-  { name: "Vertex", icon: Box },
+  { name: "Vertas", icon: Box },
   { name: "Lumina", icon: Gem },
-  { name: "Orbit Labs", icon: Orbit },
-  { name: "Zenith", icon: Shapes },
+  { name: "Drait Labs", icon: Orbit },
+  { name: "Santhii", icon: Shapes },
 ]
 
 export function ClientLogos() {
@@ -23,6 +23,9 @@ export function ClientLogos() {
         <Reveal>
           <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             Trusted by institutions &amp; organizations
+          </p>
+          <p className="mt-2 text-center text-sm text-muted-foreground/80">
+            Because results speak louder than promises.
           </p>
         </Reveal>
         <Reveal delay={0.05}>

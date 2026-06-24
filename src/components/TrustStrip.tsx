@@ -1,11 +1,10 @@
 const ITEMS = [
-  "Life Skills",
-  "NLP Workshops",
-  "Hospitality Training",
-  "Corporate Training",
-  "Retail & Sales Training",
-  "Career Counselling",
-  "Institution Programs",
+  "Soft skills that get you hired",
+  "NLP that changes how you think",
+  "Hospitality training that impresses guests",
+  "Corporate training that fixes real team problems",
+  "Retail & sales skills that close more deals",
+  "Career counselling that clears the confusion",
 ]
 
 export function TrustStrip() {

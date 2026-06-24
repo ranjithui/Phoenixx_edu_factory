@@ -6,17 +6,21 @@ import { cn } from "@/lib/utils"
 const INFO = [
   { icon: Phone, label: "Phone", value: "+91 93427 21163", href: "tel:+919342721163" },
   { icon: Mail, label: "Email", value: "hr@phoenixxedu.com", href: "mailto:hr@phoenixxedu.com" },
-  { icon: MapPin, label: "Office", value: "3/29, 3rd Floor, Jaya Nagar, Vadavalli, Coimbatore – 641041" },
-  { icon: Clock, label: "Hours", value: "Sun – Fri, 8:00 AM – 6:00 PM" },
+  { icon: MapPin, label: "Office", value: "Trichy · Peelamedu · Coimbatore · Anthiyur" },
+  { icon: Clock, label: "Hours", value: "Sun – Fri, 8:00 AM – 5:00 PM" },
 ]
 
 const INTERESTS = [
-  "Soft Skills Training",
+  "NLP Workshops — Basic",
+  "NLP Workshops — Practitioner",
+  "NLP Workshops — Master Practitioner",
   "Life Skills Training",
-  "NLP Workshops",
   "Hospitality Training",
-  "BPO Skills Training",
-  "Institution / Corporate Programs",
+  "Retail & Sales Training",
+  "Corporate Training",
+  "Institution Programs",
+  "Career Counselling",
+  "I'm not sure — help me choose",
 ]
 
 const inputCls =
@@ -36,11 +40,13 @@ export function Contact() {
     e.preventDefault()
     const form = e.currentTarget
     const fd = new FormData(form)
-    const name = String(fd.get("name") ?? "").trim()
+    const firstName = String(fd.get("firstName") ?? "").trim()
+    const lastName = String(fd.get("lastName") ?? "").trim()
     const email = String(fd.get("email") ?? "").trim()
     const message = String(fd.get("message") ?? "").trim()
     const next: Record<string, boolean> = {
-      name: !name,
+      firstName: !firstName,
+      lastName: !lastName,
       email: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
       message: !message,
     }
@@ -77,12 +83,15 @@ export function Contact() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Let's build something transformative
+                Not sure which program is right for you? Let's figure it out together.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-                Have a question about our programs or want to partner with us? We'd love to hear from you.
+                You don't need to have it all figured out before reaching out. Tell us where you are
+                — and we'll tell you exactly which program addresses your specific challenge. No
+                pressure. No generic sales pitch. Just an honest conversation about where you want to
+                go and how we can help you get there.
               </p>
             </Reveal>
 
@@ -119,12 +128,18 @@ export function Contact() {
 
               <div className="mt-6 grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-card-foreground">Full name</label>
-                  <input id="name" name="name" type="text" autoComplete="name" placeholder="Your name"
-                    className={cn(inputCls, errors.name && "border-destructive focus:border-destructive focus:ring-destructive/25")} />
-                  {errors.name && <p className="mt-1 text-xs font-medium text-destructive">Please enter your name.</p>}
+                  <label htmlFor="firstName" className="block text-sm font-medium text-card-foreground">First name</label>
+                  <input id="firstName" name="firstName" type="text" autoComplete="given-name" placeholder="First name"
+                    className={cn(inputCls, errors.firstName && "border-destructive focus:border-destructive focus:ring-destructive/25")} />
+                  {errors.firstName && <p className="mt-1 text-xs font-medium text-destructive">Please enter your first name.</p>}
                 </div>
                 <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-card-foreground">Last name</label>
+                  <input id="lastName" name="lastName" type="text" autoComplete="family-name" placeholder="Last name"
+                    className={cn(inputCls, errors.lastName && "border-destructive focus:border-destructive focus:ring-destructive/25")} />
+                  {errors.lastName && <p className="mt-1 text-xs font-medium text-destructive">Please enter your last name.</p>}
+                </div>
+                <div className="sm:col-span-2">
                   <label htmlFor="phone" className="block text-sm font-medium text-card-foreground">Phone</label>
                   <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+91 ..." className={inputCls} />
                 </div>

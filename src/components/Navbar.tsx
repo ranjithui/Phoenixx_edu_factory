@@ -97,7 +97,7 @@ export function Navbar() {
               size="lg"
               className="rounded-lg px-6 text-xs uppercase tracking-widest"
             >
-              Get Quote
+              Get Quotes
             </Button>
           </SectionLink>
           <button
@@ -158,7 +158,7 @@ export function Navbar() {
             onClick={() => setOpen(false)}
             className="mt-1 block rounded-lg bg-primary px-4 py-3 text-center text-sm font-medium uppercase tracking-wider text-primary-foreground"
           >
-            Get Quote
+            Get Quotes
           </SectionLink>
         </div>
       )}

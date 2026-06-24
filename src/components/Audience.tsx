@@ -1,11 +1,31 @@
-import { GraduationCap, Briefcase, Building2, HeartHandshake } from "lucide-react"
+import { GraduationCap, Briefcase, Building2, HeartHandshake, ArrowRight } from "lucide-react"
 import { Reveal } from "./Reveal"
 
 const AUDIENCE = [
-  { icon: GraduationCap, title: "Students", text: "Build employability skills and confidence to move from campus to career." },
-  { icon: Briefcase, title: "Professionals", text: "Sharpen leadership, communication, and NLP skills to accelerate your growth." },
-  { icon: Building2, title: "Institutions", text: "Partner with us for college-to-corporate programs and career counselling." },
-  { icon: HeartHandshake, title: "Communities", text: "Inclusive training that uplifts marginalized communities with real opportunity." },
+  {
+    icon: GraduationCap,
+    title: "Students",
+    text: "Your degree got you this far — but employers want skills your classroom didn't teach. Our student programs close that gap with the communication, career clarity, and professional confidence to own any interview.",
+    cta: "Find my program",
+  },
+  {
+    icon: Briefcase,
+    title: "Professionals",
+    text: "Stuck at the same level while the promotion keeps going to someone else? Our professional programs build the leadership communication, executive presence, and influence that make you impossible to overlook.",
+    cta: "Find my program",
+  },
+  {
+    icon: Building2,
+    title: "Institutions",
+    text: "Placement numbers that don't reflect your students' quality? Our institutional programs bridge academic excellence and employment-ready skills — better placements, stronger reputation, graduates who represent you well.",
+    cta: "Partner with us",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Communities",
+    text: "Most training is built for people who already have access. Our community programs bring practical skills training to neighborhoods, NGOs, and organizations — because opportunity shouldn't be limited by access.",
+    cta: "Learn more",
+  },
 ]
 
 export function Audience() {
@@ -36,6 +56,12 @@ export function Audience() {
                 </span>
                 <h3 className="relative mt-4 text-lg font-semibold text-card-foreground">{a.title}</h3>
                 <p className="relative mt-2 grow text-sm leading-relaxed text-muted-foreground">{a.text}</p>
+                <a
+                  href="#contact"
+                  className="relative mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-2.5"
+                >
+                  {a.cta} <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
             </Reveal>
           ))}

@@ -3,24 +3,27 @@ import { Reveal } from "./Reveal"
 
 const TESTIMONIALS = [
   {
+    problem: "Rejected at every final interview despite being qualified.",
     quote:
-      "The soft skills program completely changed how I present myself in interviews. I landed my first job within a month.",
-    name: "Arun R.",
+      "Before the soft skills program, I was rejected at every final interview. Within three weeks of completing the workshop, I cleared two interviews and got my first job offer.",
+    name: "Arun K.",
     role: "Fresh Graduate",
-    initials: "AR",
+    initials: "AK",
   },
   {
+    problem: "Stuck in the same role for two years, unable to break into a team lead position.",
     quote:
-      "The NLP Practitioner workshop gave our managers practical tools they use every single day. Highly professional team.",
+      "I had been trying to move into a team lead role for two years. After the NLP Practitioner workshop, my manager noticed the change immediately. I got promoted within six weeks.",
     name: "Priya K.",
-    role: "HR Manager",
+    role: "BPO Professional",
     initials: "PK",
   },
   {
+    problem: "Placement rates plateaued for three years despite strong academic results.",
     quote:
-      "Their college-to-corporate program prepared our students for placements better than anything we'd tried before.",
+      "Our placement rates had plateaued for three years. After partnering with Phoenixx Edu Factory, we saw a 22% improvement in placement outcomes in one academic year.",
     name: "Dr. Suresh M.",
-    role: "College Placement Head",
+    role: "Principal",
     initials: "SM",
   },
 ]
@@ -35,8 +38,14 @@ export function Testimonials() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              What learners say about us
+              Real people. Real problems. Real results.
             </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+              These aren't success stories that happened by accident. They're what happens when the
+              right training meets the right moment.
+            </p>
           </Reveal>
         </div>
 
@@ -49,6 +58,10 @@ export function Testimonials() {
                     <Star key={s} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary">
+                  The problem they came with
+                </p>
+                <p className="mt-1 text-sm font-medium leading-relaxed text-card-foreground">{t.problem}</p>
                 <blockquote className="mt-4 grow text-[15px] italic leading-relaxed text-muted-foreground">
                   "{t.quote}"
                 </blockquote>

@@ -17,12 +17,12 @@ export function Services() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              Training programs that build <span className="text-gradient-ember">real-world skills</span>
+              Find the program that solves your <span className="text-gradient-ember">specific challenge</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-              From communication to corporate readiness — practical programs designed for measurable growth.
+              Every program at Phoenixx Edu Factory is built around a real problem that real people face. Find yours below.
             </p>
           </Reveal>
         </div>

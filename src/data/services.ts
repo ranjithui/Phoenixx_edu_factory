@@ -53,12 +53,12 @@ export const SERVICES: Service[] = [
     slug: "life-skills-training",
     icon: Sparkles,
     title: "Life Skills Training",
-    desc: "Personal development and decision-making skills to navigate life and work with resilience.",
+    desc: "Emotional intelligence, resilience, and decision-making frameworks that help you take control of your direction.",
     tags: "Personal Growth · Decision-Making",
     bg: "linear-gradient(155deg, #9f1239 0%, #c2410c 55%, #1c1917 100%)",
     image: bannerImg,
     intro:
-      "Life Skills training builds the inner foundation people need to thrive — emotional awareness, resilience, and the ability to make sound decisions under pressure. These are the skills that keep careers and lives on track when things get hard.",
+      "You feel overwhelmed by decisions, reactive in conflicts, and unclear about where your career or personal life is heading — and no training you've done has addressed the gap between who you are now and who you need to become. Our Life Skills Training builds the emotional intelligence, critical thinking, stress resilience, and decision-making frameworks that help you take control of your reactions, your relationships, and your direction.",
     highlights: [
       { title: "Emotional Intelligence", desc: "Understand and manage emotions in yourself and others." },
       { title: "Decision-Making", desc: "Frame problems clearly and choose with confidence." },
@@ -76,12 +76,12 @@ export const SERVICES: Service[] = [
     slug: "nlp-workshops",
     icon: BrainCircuit,
     title: "NLP Workshops",
-    desc: "Neuro-Linguistic Programming across Basic, Practitioner, and Master Practitioner levels.",
+    desc: "The science of how language, thought, and behavior connect — tools to communicate with precision and build instant rapport.",
     tags: "Basic · Practitioner · Master",
     bg: "linear-gradient(155deg, #4c1d95 0%, #6d28d9 55%, #1e1b4b 100%)",
     image: bannerImg,
     intro:
-      "Neuro-Linguistic Programming (NLP) gives you practical tools to understand how thinking, language, and behaviour connect — and how to change them. Our workshops run across three certified levels, from foundations to mastery.",
+      "You want to lead, influence, and connect — but your words don't land the way you intend, and you leave conversations feeling like you didn't get your point across no matter how much you prepare. Our NLP Workshops teach the science behind how language, thought, and behavior work together — giving you tools to communicate with precision, build instant rapport, and create the outcomes you design, across Basic, Practitioner, and Master Practitioner levels.",
     highlights: [
       { title: "Basic", desc: "Core presuppositions, rapport, and outcome framing." },
       { title: "Practitioner", desc: "Language models, reframing, and belief change." },
@@ -99,12 +99,12 @@ export const SERVICES: Service[] = [
     slug: "hospitality-training",
     icon: UtensilsCrossed,
     title: "Hospitality Training",
-    desc: "Customer service excellence and operations training for the hospitality industry.",
+    desc: "The customer-service mindset and professional standards that make every guest feel genuinely valued.",
     tags: "Customer Service · Operations",
     bg: "linear-gradient(155deg, #064e3b 0%, #0f766e 55%, #022c22 100%)",
     image: bannerImg,
     intro:
-      "In hospitality, service is the product. Our Hospitality program trains front-line and operations staff to deliver consistent, memorable guest experiences — the kind that build loyalty and reputation.",
+      "Your front-line team is technically trained — but they struggle to deliver the warm, consistent, professional guest experience that builds loyalty and reputation, and one bad interaction erases ten great ones. Our Hospitality Training builds the customer-service mindset, emotional intelligence, and professional standards that make every guest feel genuinely valued — not just processed. Because in hospitality, how you make people feel is the product.",
     highlights: [
       { title: "Guest Service Excellence", desc: "Five-star service standards and etiquette." },
       { title: "Front Office Operations", desc: "Check-in, upselling, and complaint handling." },
@@ -122,12 +122,12 @@ export const SERVICES: Service[] = [
     slug: "retail-and-sales-training",
     icon: ShoppingBag,
     title: "Retail and Sales Training",
-    desc: "Customer-first selling, service, and conversion skills for retail and sales teams.",
+    desc: "Interpersonal skills, persuasion, and a customer-first mindset that turn product knowledge into actual sales.",
     tags: "Selling · Customer Service · Conversion",
     bg: "linear-gradient(155deg, #7c2d12 0%, #db2777 55%, #1c1917 100%)",
     image: bannerImg,
     intro:
-      "In retail and sales, every customer interaction is an opportunity. Our Retail and Sales Training equips front-line staff and sales professionals with the confidence, product storytelling, and closing skills that turn footfall into loyal, repeat customers.",
+      "Your sales team knows the product inside out — but they're losing deals because they can't read the customer, handle objections, or close with confidence, and product knowledge without people skills costs revenue. Our Retail and Sales Training builds the interpersonal skills, persuasion techniques, and customer-first mindset that turn product knowledge into actual sales — so your team knows how to connect, convince, and convert in any selling environment.",
     highlights: [
       { title: "Customer Engagement", desc: "Greet, understand, and connect with every customer." },
       { title: "Consultative Selling", desc: "Match needs to products and sell with confidence." },
@@ -145,12 +145,12 @@ export const SERVICES: Service[] = [
     slug: "institution-programs",
     icon: GraduationCap,
     title: "Institution Programs",
-    desc: "College-to-corporate training and career counselling for educational institutions.",
+    desc: "Corporate-readiness training, career counselling, and placement skills delivered directly to your campus.",
     tags: "College-to-Corporate · Counselling",
     bg: "linear-gradient(155deg, #78350f 0%, #d97706 55%, #1c1917 100%)",
     image: bannerImg,
     intro:
-      "We partner with colleges and institutions to bridge the gap between academics and employment. Our Institution Programs combine employability training, career counselling, and faculty development into a single, measurable journey.",
+      "Your institution produces academically strong graduates — but placement rates don't reflect the quality of your students, because employers are screening for skills your curriculum doesn't cover. Phoenixx Edu Factory's Institution Programs bring structured corporate-readiness training, career counselling, and placement skills directly to your campus — bridging the gap between academic excellence and employment-ready performance, with a proven track record of improving placement outcomes.",
     highlights: [
       { title: "Campus-to-Corporate", desc: "Employability, resume, and interview readiness." },
       { title: "Career Counselling", desc: "Guided pathways from college to first job." },

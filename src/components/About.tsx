@@ -4,7 +4,7 @@ import { CountUp } from "./CountUp"
 const STATS: Array<{ to: number; suffix?: string; label: string }> = [
   { to: 97, suffix: "%", label: "satisfaction" },
   { to: 91, suffix: "%", label: "placement" },
-  { to: 6, suffix: "+", label: "programs" },
+  { to: 8, suffix: "+", label: "programs" },
 ]
 
 export function About() {
@@ -17,18 +17,37 @@ export function About() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">About Us</p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mx-auto mt-4 max-w-3xl font-serif text-3xl font-medium leading-[1.15] text-foreground sm:text-4xl lg:text-5xl">
+            <p className="mx-auto mt-4 max-w-3xl font-serif text-3xl font-medium leading-[1.15] text-foreground sm:text-4xl lg:text-5xl">
               "We don't teach skills.
               <br />
               We engineer transformation."
+            </p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <h2 className="mx-auto mt-8 max-w-2xl text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+              Most training institutes teach content. We change behavior.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Like the phoenix, we believe in renewal. Phoenixx Edu Factory partners with students,
-              professionals, institutions, and communities to build the skills, confidence, and
-              mindset needed to thrive in the modern workplace.
-            </p>
+            <div className="mx-auto mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p>
+                The gap between knowing what to do and actually doing it is where most people get
+                stuck — and where most training programs fail. Traditional workshops fill notebooks.
+                Phoenixx Edu Factory fills gaps.
+              </p>
+              <p>
+                Using proven Neuro-Linguistic Programming techniques combined with experiential
+                learning, our certified coaches work at the level of mindset, habits, and
+                communication patterns — not just skills checklists. The result is behavior change
+                that lasts beyond the workshop room and shows up in job interviews, team meetings,
+                client calls, and career milestones.
+              </p>
+              <p>
+                This is why 97% of our participants say our programs changed their professional
+                trajectory. And why 91% land better roles or report measurable career advancement
+                within 90 days.
+              </p>
+            </div>
           </Reveal>
 
           {/* inline stat pill */}

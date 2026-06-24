@@ -4,9 +4,9 @@ import { SERVICES } from "../data/services"
 
 const SOCIALS = [
   {
-    label: "Facebook",
+    label: "YouTube",
     href: "#",
-    path: "M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z",
+    path: "M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 3.9 12 3.9 12 3.9s-7.5 0-9.4.5A3 3 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z",
   },
   {
     label: "LinkedIn",
@@ -37,8 +37,9 @@ export function Footer() {
               <img src={logoUrl} alt="Phoenixx Edu Factory" className="h-11 w-auto" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              A corporate training institute dedicated to fostering professional growth and
-              organizational excellence.
+              We solve the gap between education and employability — with certified NLP, practical
+              soft skills, and career development programs that help students, professionals, and
+              organizations across Tamil Nadu perform at their full potential.
             </p>
             <div className="mt-5 flex gap-2">
               {SOCIALS.map((s) => (
@@ -82,11 +83,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-8 sm:flex-row">
+        <p className="mt-12 border-t border-border pt-8 text-center text-sm font-medium text-foreground">
+          Phoenixx Edu Factory — Solving the Gap Between Education and Employability
+        </p>
+        <div className="mt-4 flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Phoenixx Edu Factory. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">Rise. Learn. Excel.</p>
+          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+            <a href="#" className="transition-colors hover:text-primary">Privacy Policy</a>
+            <span className="h-3 w-px bg-border" />
+            <a href="#" className="transition-colors hover:text-primary">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

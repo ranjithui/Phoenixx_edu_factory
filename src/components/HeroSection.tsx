@@ -106,16 +106,23 @@ export function HeroSection() {
             <Sparkles className="h-4 w-4 text-primary" />
           </span>
 
-          <h1 className="mt-7 font-serif text-[clamp(2.5rem,5vw,4rem)] font-medium leading-[1.05] tracking-tight text-foreground">
-            <span className="text-gradient-ember">Build real-world skills</span>
-            <br />
-            and rise with confidence
+          <h1 className="mt-7 font-serif text-[clamp(2.25rem,4.5vw,3.5rem)] font-medium leading-[1.08] tracking-tight text-foreground">
+            Struggling with communication, confidence, or career growth?{" "}
+            <span className="text-gradient-ember">We've helped over 1,000 people break through.</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Soft skills, life skills, and workshops delivered with a practical, people-first
-            approach — helping students, professionals, and organizations grow with measurable
-            results.
+          <p className="mt-6 max-w-xl text-base font-medium leading-relaxed text-foreground sm:text-lg">
+            Most training programs teach theory. Phoenixx Edu Factory changes behavior — through
+            certified NLP, practical soft skills, and career-focused workshops that deliver results
+            in 3–5 days.
+          </p>
+
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            You already know what's holding you back — the nerves before a presentation, the
+            interview that went nowhere, the manager role you can't seem to reach, or the career
+            plateau that's lasted too long. Phoenixx Edu Factory was built for exactly this moment.
+            Our NLP-certified trainers work with you — not at you — to identify the real blocks and
+            replace them with skills that stick.
           </p>
 
           {/* partner row */}
@@ -197,7 +204,7 @@ export function HeroSection() {
               </div>
             </div>
             <p className="mt-3 text-center text-sm font-semibold text-card-foreground">Completion Rate</p>
-            <p className="text-center text-xs text-muted-foreground">Across programs</p>
+            <p className="text-center text-xs text-muted-foreground">Phoenixx Programs</p>
           </div>
 
           {/* floating card — module list with progress bars, bottom-right */}
