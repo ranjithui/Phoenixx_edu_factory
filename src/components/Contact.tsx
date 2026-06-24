@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 const INFO = [
   { icon: Phone, label: "Phone", value: "+91 93427 21163", href: "tel:+919342721163" },
   { icon: Mail, label: "Email", value: "hr@phoenixxedu.com", href: "mailto:hr@phoenixxedu.com" },
-  { icon: MapPin, label: "Office", value: "Trichy · Peelamedu · Coimbatore · Anthiyur" },
+  { icon: MapPin, label: "Office", value: "3/29, 3rd Floor, Jaya Nagar, Vadavalli, Coimbatore – 641041" },
   { icon: Clock, label: "Hours", value: "Sun – Fri, 8:00 AM – 5:00 PM" },
 ]
 
