@@ -1,10 +1,9 @@
 const ITEMS = [
-  "Soft Skills",
   "Life Skills",
   "NLP Workshops",
   "Hospitality Training",
-  "BPO Skills",
   "Corporate Training",
+  "Retail & Sales Training",
   "Career Counselling",
   "Institution Programs",
 ]

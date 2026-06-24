@@ -3,6 +3,7 @@ import {
   GraduationCap,
   HeartPulse,
   UtensilsCrossed,
+  Code2,
   Headset,
   Store,
   Factory,
@@ -56,9 +57,20 @@ const INDUSTRIES: Industry[] = [
     ],
   },
   {
+    icon: Code2,
+    label: "IT",
+    blurb: "People skills and leadership that help technical teams collaborate and deliver.",
+    trainings: [
+      { title: "Communication for Techies", desc: "Explain complex work clearly to any audience." },
+      { title: "Agile Teamwork", desc: "Collaboration, stand-ups, and cross-team coordination." },
+      { title: "Tech-Lead Leadership", desc: "Grow engineers into confident people-leaders." },
+      { title: "Client & Stakeholder Skills", desc: "Professional, outcome-focused client communication." },
+    ],
+  },
+  {
     icon: Headset,
-    label: "IT & BPO",
-    blurb: "Communication and process skills for global, client-facing teams.",
+    label: "BPO",
+    blurb: "Voice, chat, and process skills for global, client-facing support teams.",
     trainings: [
       { title: "Voice & Accent", desc: "Clear, neutral communication for global clients." },
       { title: "Customer Handling", desc: "De-escalation and call-quality skills." },
