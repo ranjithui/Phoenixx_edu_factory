@@ -82,9 +82,7 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-12 border-t border-border pt-8 text-center text-sm font-medium text-foreground">
-          Phoenixx Edu Factory — Solving the Gap Between Education and Employability
-        </p>
+        
         <div className="mt-4 flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Phoenixx Edu Factory. All rights reserved.
