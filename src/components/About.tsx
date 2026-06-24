@@ -29,25 +29,11 @@ export function About() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mx-auto mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              <p>
-                The gap between knowing what to do and actually doing it is where most people get
-                stuck — and where most training programs fail. Traditional workshops fill notebooks.
-                Phoenixx Edu Factory fills gaps.
-              </p>
-              <p>
-                Using proven Neuro-Linguistic Programming techniques combined with experiential
-                learning, our certified coaches work at the level of mindset, habits, and
-                communication patterns — not just skills checklists. The result is behavior change
-                that lasts beyond the workshop room and shows up in job interviews, team meetings,
-                client calls, and career milestones.
-              </p>
-              <p>
-                This is why 97% of our participants say our programs changed their professional
-                trajectory. And why 91% land better roles or report measurable career advancement
-                within 90 days.
-              </p>
-            </div>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Traditional workshops fill notebooks. Phoenixx Edu Factory fills gaps — working at the
+              level of mindset, habits, and communication patterns that actually change how you
+              perform.
+            </p>
           </Reveal>
 
           {/* inline stat pill */}

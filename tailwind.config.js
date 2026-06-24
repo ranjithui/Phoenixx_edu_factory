@@ -12,8 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sora: ["Sora", "sans-serif"],
-        serif: ['"Playfair Display"', "Georgia", "serif"],
+        sans: ['"Space Grotesk"', "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ['"Outfit"', "ui-sans-serif", "system-ui", "sans-serif"],
+        // `serif` is repointed to Outfit so existing `font-serif` headings adopt the new system
+        serif: ['"Outfit"', "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

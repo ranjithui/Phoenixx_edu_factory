@@ -3,27 +3,31 @@ import { Reveal } from "./Reveal"
 
 const AUDIENCE = [
   {
-    icon: GraduationCap,
-    title: "Students",
-    text: "Your degree got you this far — but employers want skills your classroom didn't teach. Our student programs close that gap with the communication, career clarity, and professional confidence to own any interview.",
-    cta: "Find my program",
-  },
-  {
     icon: Briefcase,
-    title: "Professionals",
-    text: "Stuck at the same level while the promotion keeps going to someone else? Our professional programs build the leadership communication, executive presence, and influence that make you impossible to overlook.",
+    title: "Professionals & Corporate Teams",
+    problem: "Stuck at the same level while others get promoted?",
+    solution: "We build the leadership presence and communication skills that make career growth stop stalling.",
     cta: "Find my program",
   },
   {
     icon: Building2,
     title: "Institutions",
-    text: "Placement numbers that don't reflect your students' quality? Our institutional programs bridge academic excellence and employment-ready skills — better placements, stronger reputation, graduates who represent you well.",
+    problem: "Placement rates don't reflect the quality of your graduates?",
+    solution: "We bring structured career readiness training to campus with proven placement outcomes.",
     cta: "Partner with us",
+  },
+  {
+    icon: GraduationCap,
+    title: "Students",
+    problem: "Qualified on paper — but not ready for the room?",
+    solution: "We close the gap between your degree and what employers need on day one.",
+    cta: "Find my program",
   },
   {
     icon: HeartHandshake,
     title: "Communities",
-    text: "Most training is built for people who already have access. Our community programs bring practical skills training to neighborhoods, NGOs, and organizations — because opportunity shouldn't be limited by access.",
+    problem: "Most training wasn't built for people without a head start.",
+    solution: "Ours was. Practical skills for neighborhoods, NGOs, and community organizations.",
     cta: "Learn more",
   },
 ]
@@ -55,7 +59,8 @@ export function Audience() {
                   <a.icon className="h-6 w-6" />
                 </span>
                 <h3 className="relative mt-4 text-lg font-semibold text-card-foreground">{a.title}</h3>
-                <p className="relative mt-2 grow text-sm leading-relaxed text-muted-foreground">{a.text}</p>
+                <p className="relative mt-2 text-sm italic leading-relaxed text-muted-foreground">{a.problem}</p>
+                <p className="relative mt-2 grow text-sm leading-relaxed text-muted-foreground">{a.solution}</p>
                 <a
                   href="#contact"
                   className="relative mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-2.5"

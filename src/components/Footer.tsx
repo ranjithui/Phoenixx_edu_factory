@@ -37,9 +37,8 @@ export function Footer() {
               <img src={logoUrl} alt="Phoenixx Edu Factory" className="h-11 w-auto" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              We solve the gap between education and employability — with certified NLP, practical
-              soft skills, and career development programs that help students, professionals, and
-              organizations across Tamil Nadu perform at their full potential.
+              Closing the gap between education and employability — for students, professionals, and
+              organizations across Tamil Nadu.
             </p>
             <div className="mt-5 flex gap-2">
               {SOCIALS.map((s) => (

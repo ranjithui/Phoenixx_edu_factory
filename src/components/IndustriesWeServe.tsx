@@ -29,10 +29,10 @@ const INDUSTRIES: Industry[] = [
     blurb:
       "Institutions produce knowledge — but graduates often leave without the communication, confidence, or career skills employers demand on day one. We close the gap between academic learning and professional readiness, for faculty and students alike.",
     trainings: [
-      { title: "Faculty Development", desc: "Workshops that improve teaching delivery, student engagement, and the transfer of real-world professional skills inside the classroom." },
-      { title: "Campus-to-Corporate", desc: "End-to-end campus programs that build career readiness, professional communication, and interview confidence before students graduate." },
-      { title: "Student Life Skills", desc: "Practical workshops that equip students to handle pressure, lead effectively, and grow with confidence after graduation." },
-      { title: "Career Counselling", desc: "Structured counselling that helps students identify strengths, map a clear direction, and move into the right role with purpose." },
+      { title: "Faculty Development", desc: "Equip educators to teach the skills employers actually look for." },
+      { title: "Campus-to-Corporate", desc: "Build career readiness and interview confidence before students graduate." },
+      { title: "Student Life Skills", desc: "Help students handle pressure, lead, and grow with confidence." },
+      { title: "Career Counselling", desc: "Help students find direction and the right career path." },
     ],
   },
   {
@@ -41,10 +41,10 @@ const INDUSTRIES: Industry[] = [
     blurb:
       "Healthcare professionals are trained in clinical skills — but patient communication, empathy under pressure, and team coordination are often left to chance, costing trust and outcomes. We train teams in the interpersonal skills that build high-functioning clinical environments.",
     trainings: [
-      { title: "Patient Communication", desc: "Workshops that help staff deliver information clearly, respond to anxiety with empathy, and make every patient feel cared for." },
-      { title: "Stress & Resilience", desc: "Practical resilience and stress-management tools that help professionals perform consistently under pressure without burning out." },
-      { title: "Team Coordination", desc: "Communication workshops that improve coordination, accountability, and collaboration across clinical and administrative teams." },
-      { title: "Healthcare Leadership", desc: "Leadership programs for healthcare managers — communication, delegation, conflict resolution, and team motivation." },
+      { title: "Patient Communication", desc: "Deliver information clearly and respond to anxiety with empathy." },
+      { title: "Stress & Resilience", desc: "Help staff perform under pressure without burning out." },
+      { title: "Team Coordination", desc: "Improve coordination and accountability across clinical and admin teams." },
+      { title: "Healthcare Leadership", desc: "Build communication and team-motivation skills for healthcare managers." },
     ],
   },
   {
@@ -53,10 +53,10 @@ const INDUSTRIES: Industry[] = [
     blurb:
       "Hospitality businesses invest heavily in decor, food, and technology — but the guest experience often falls apart at the human level, where inconsistent service destroys reputation. We train teams to make every guest interaction exceptional, not just adequate.",
     trainings: [
-      { title: "Guest Experience Excellence", desc: "Workshops that build the customer mindset and professional standards that create memorable stays and five-star reviews." },
-      { title: "Service Recovery", desc: "Training that gives staff the tools, language, and confidence to turn a bad experience into a loyalty-building moment." },
-      { title: "Communication & Presentation", desc: "Communication and grooming workshops that align how your team looks, speaks, and presents with your brand's promise." },
-      { title: "Hospitality Leadership", desc: "Leadership programs that build the team-management and service-leadership skills high-performing venues require." },
+      { title: "Guest Experience Excellence", desc: "Build the mindset that creates memorable, five-star guest stays." },
+      { title: "Service Recovery", desc: "Turn a bad experience into a loyalty-building moment." },
+      { title: "Communication & Presentation", desc: "Align how your team looks, speaks, and presents." },
+      { title: "Hospitality Leadership", desc: "Build team-management skills that high-performing venues require." },
     ],
   },
   {
@@ -65,10 +65,10 @@ const INDUSTRIES: Industry[] = [
     blurb:
       "IT professionals are technically brilliant — but communication gaps, poor stakeholder management, and underdeveloped leadership hold teams back from delivering their full value. We help IT teams make technical excellence visible to the business.",
     trainings: [
-      { title: "Technical Communication", desc: "Workshops that teach IT professionals to translate technical thinking into clear, credible, persuasive language for any audience." },
-      { title: "Stakeholder Management", desc: "Training that builds the relationship, expectation-setting, and presentation skills that keep projects aligned and clients confident." },
-      { title: "Agile Team Communication", desc: "Workshops that strengthen sprint communication, retrospective quality, and cross-functional alignment." },
-      { title: "Leadership for Tech Leads", desc: "Programs that turn individual contributors into effective team leaders — people management, communication, and decision-making." },
+      { title: "Technical Communication", desc: "Translate technical thinking into clear, persuasive language for anyone." },
+      { title: "Stakeholder Management", desc: "Keep projects aligned and clients confident through communication." },
+      { title: "Agile Team Communication", desc: "Strengthen sprint communication and cross-functional alignment." },
+      { title: "Leadership for Tech Leads", desc: "Turn strong engineers into effective, confident team leaders." },
     ],
   },
   {
@@ -77,10 +77,10 @@ const INDUSTRIES: Industry[] = [
     blurb:
       "BPO employers need agents who are confident, articulate, and process-literate from day one — but most freshers arrive with qualifications and no industry-ready skills. We train candidates and teams in exactly what employers need, before they walk through the door.",
     trainings: [
-      { title: "Voice & Accent", desc: "Training that builds speech clarity, pronunciation consistency, and professional tone — closing the gap between potential and placement." },
-      { title: "BPO Process & Etiquette", desc: "Process and professional-etiquette training that makes new agents operationally ready and confident from their first shift." },
-      { title: "Customer Handling & De-escalation", desc: "Workshops that teach agents to listen actively, respond calmly, and de-escalate conflict without losing the customer or the call." },
-      { title: "Team Leader Development", desc: "Programs that build the coaching, performance-management, and communication skills high-performing BPO floors require." },
+      { title: "Voice & Accent", desc: "Build speech clarity, consistency, and professional tone." },
+      { title: "BPO Process & Etiquette", desc: "Make new agents operationally ready from day one." },
+      { title: "Customer Handling & De-escalation", desc: "Help agents stay calm and de-escalate difficult calls." },
+      { title: "Team Leader Development", desc: "Build coaching and performance skills for floor leaders." },
     ],
   },
   {
@@ -89,10 +89,10 @@ const INDUSTRIES: Industry[] = [
     blurb:
       "Retail businesses invest in product range, store design, and pricing — but lose sales every day because floor staff can't connect with customers, handle objections, or close confidently. We train teams to sell with confidence and serve with warmth.",
     trainings: [
-      { title: "Sales Floor Communication", desc: "Training that teaches staff to open conversations, read buying signals, and guide customers to a confident purchase decision." },
-      { title: "Customer Experience", desc: "Workshops that build the attentiveness, empathy, and consistency that turn first-time shoppers into loyal, referring customers." },
-      { title: "Objection Handling & Closing", desc: "Skills training that gives your team the language and technique to convert hesitation into decision." },
-      { title: "Retail Leadership", desc: "Programs that build the coaching, communication, and motivational skills that turn store managers into genuine team leaders." },
+      { title: "Sales Floor Communication", desc: "Open conversations and guide customers to confident purchases." },
+      { title: "Customer Experience", desc: "Turn first-time shoppers into loyal, returning customers." },
+      { title: "Objection Handling & Closing", desc: "Give your team the technique to convert hesitation." },
+      { title: "Retail Leadership", desc: "Turn store managers into motivating, effective team leaders." },
     ],
   },
   {
@@ -101,10 +101,10 @@ const INDUSTRIES: Industry[] = [
     blurb:
       "Manufacturing demands precision, safety, and teamwork — but communication breakdowns, leadership gaps, and low morale quietly erode efficiency, safety, and output. We train teams and supervisors in the skills that keep operations running safely and smoothly.",
     trainings: [
-      { title: "Safety Communication", desc: "Workshops that embed a speak-up culture — where workers flag issues and supervisors respond without blame." },
-      { title: "Supervisor Leadership", desc: "Programs that build the communication, coaching, and people-management skills production floors require." },
-      { title: "Team Communication & Coordination", desc: "Workshops that build the clarity, accountability, and structured handoff habits that keep production moving." },
-      { title: "Productivity & Work Ethic", desc: "Programs that rebuild accountability habits and the mindset that drives consistent, high-quality output every shift." },
+      { title: "Safety Communication", desc: "Embed a speak-up culture where workers flag issues early." },
+      { title: "Supervisor Leadership", desc: "Build coaching and people skills for production supervisors." },
+      { title: "Team Communication & Coordination", desc: "Keep production moving with clear, accountable handoffs." },
+      { title: "Productivity & Work Ethic", desc: "Rebuild accountability and the mindset that drives output." },
     ],
   },
   {
@@ -113,10 +113,10 @@ const INDUSTRIES: Industry[] = [
     blurb:
       "Banking professionals are trusted with people's financial futures — but relationship skills, communication confidence, and ethical selling are rarely trained to the level customer trust and regulation demand. We train teams to build trust, improve service, and sell ethically.",
     trainings: [
-      { title: "Customer Relationship Management", desc: "Training that builds the listening, empathy, and personalisation skills that make banking customers feel valued — and stay." },
-      { title: "Ethical Sales & Product Communication", desc: "Workshops that teach staff to match the right product to the right customer — building trust, not just transactions." },
-      { title: "Complaint Handling & Service Recovery", desc: "Workshops that give staff the language and process to resolve issues quickly, professionally, and in a way that leaves customers heard." },
-      { title: "Leadership for Branch Managers", desc: "Programs that build the coaching, team-communication, and performance-management skills high-performing branches require." },
+      { title: "Customer Relationship Management", desc: "Build listening and empathy skills that retain customers." },
+      { title: "Ethical Sales & Product Communication", desc: "Match the right product to the right customer, honestly." },
+      { title: "Complaint Handling & Service Recovery", desc: "Resolve issues quickly while leaving customers feeling heard." },
+      { title: "Leadership for Branch Managers", desc: "Build coaching and performance skills branches need." },
     ],
   },
 ]

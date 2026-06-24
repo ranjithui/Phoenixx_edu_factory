@@ -83,15 +83,13 @@ export function Contact() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-                Not sure which program is right for you? Let's figure it out together.
+                Not sure which program is right for you?{" "}
+                <span className="text-primary">Let's figure it out.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-                You don't need to have it all figured out before reaching out. Tell us where you are
-                — and we'll tell you exactly which program addresses your specific challenge. No
-                pressure. No generic sales pitch. Just an honest conversation about where you want to
-                go and how we can help you get there.
+                Just tell us where you are — we'll point you in the right direction.
               </p>
             </Reveal>
 

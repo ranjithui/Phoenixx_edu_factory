@@ -1,5 +1,5 @@
 import {
-  Sparkles,
+  MessagesSquare,
   BrainCircuit,
   UtensilsCrossed,
   Briefcase,
@@ -13,7 +13,8 @@ export type Service = {
   slug: string
   icon: LucideIcon
   title: string
-  desc: string // short summary used on the accordion
+  problem: string // pain-point line shown on the accordion card (italic)
+  desc: string // solution line shown on the accordion card
   tags: string
   bg: string // gradient used on cards + page banner tint
   image: string // banner photo (placeholder — swap per service later)
@@ -30,7 +31,8 @@ export const SERVICES: Service[] = [
     slug: "corporate-training",
     icon: Briefcase,
     title: "Corporate Training",
-    desc: "Customized workforce development built around your team's real gaps — leadership, team dynamics, and the skills that turn talent into performance.",
+    problem: "Communication gaps and weak leadership costing your team performance?",
+    desc: "We build customized programs that turn capable people into high-performing teams.",
     tags: "Leadership · Productivity · Team Building",
     bg: "linear-gradient(155deg, #0c4a6e 0%, #1d4ed8 55%, #0f172a 100%)",
     image: bannerImg,
@@ -50,33 +52,11 @@ export const SERVICES: Service[] = [
     audience: "Corporates, startups, and enterprise teams of any size.",
   },
   {
-    slug: "life-skills-training",
-    icon: Sparkles,
-    title: "Life Skills Training",
-    desc: "Emotional intelligence, resilience, and decision-making frameworks that help you take control of your direction.",
-    tags: "Personal Growth · Decision-Making",
-    bg: "linear-gradient(155deg, #9f1239 0%, #c2410c 55%, #1c1917 100%)",
-    image: bannerImg,
-    intro:
-      "You feel overwhelmed by decisions, reactive in conflicts, and unclear about where your career or personal life is heading — and no training you've done has addressed the gap between who you are now and who you need to become. Our Life Skills Training builds the emotional intelligence, critical thinking, stress resilience, and decision-making frameworks that help you take control of your reactions, your relationships, and your direction.",
-    highlights: [
-      { title: "Emotional Intelligence", desc: "Understand and manage emotions in yourself and others." },
-      { title: "Decision-Making", desc: "Frame problems clearly and choose with confidence." },
-      { title: "Resilience & Stress", desc: "Bounce back from setbacks and manage pressure." },
-      { title: "Goal Setting", desc: "Turn intentions into focused, achievable plans." },
-    ],
-    outcomes: [
-      "Manage stress and stay composed under pressure",
-      "Make balanced decisions with confidence",
-      "Set and follow through on meaningful goals",
-    ],
-    audience: "Students, professionals, and anyone navigating change.",
-  },
-  {
     slug: "nlp-workshops",
     icon: BrainCircuit,
     title: "NLP Workshops",
-    desc: "The science of how language, thought, and behavior connect — tools to communicate with precision and build instant rapport.",
+    problem: "Your words don't land the way you intend — no matter how much you prepare?",
+    desc: "We give you tools to communicate with precision, build rapport, and get results.",
     tags: "Basic · Practitioner · Master",
     bg: "linear-gradient(155deg, #4c1d95 0%, #6d28d9 55%, #1e1b4b 100%)",
     image: bannerImg,
@@ -96,10 +76,35 @@ export const SERVICES: Service[] = [
     audience: "Coaches, trainers, leaders, and self-development seekers.",
   },
   {
+    slug: "soft-skills-training",
+    icon: MessagesSquare,
+    title: "Soft Skills Training",
+    problem: "Qualified on paper — but losing opportunities to people who communicate better?",
+    desc: "We build the communication fluency and confidence that gets you noticed and promoted.",
+    tags: "Communication · Confidence · Influence",
+    bg: "linear-gradient(155deg, #7c2d12 0%, #b45309 55%, #1c1917 100%)",
+    image: bannerImg,
+    intro:
+      "You're qualified on paper — but you keep losing opportunities to people who simply communicate better, present with more confidence, and carry themselves like leaders. Our Soft Skills Training builds the communication fluency, presence, and interpersonal confidence that get you noticed, trusted, and promoted — the human skills that decide how far your talent actually takes you.",
+    highlights: [
+      { title: "Communication", desc: "Speak clearly, structure ideas, and present with impact." },
+      { title: "Confidence & Presence", desc: "Carry yourself with credibility in any room." },
+      { title: "Teamwork & Collaboration", desc: "Build trust and work well across functions." },
+      { title: "Workplace Etiquette", desc: "Professional email, meeting, and conversation skills." },
+    ],
+    outcomes: [
+      "Communicate confidently in meetings and interviews",
+      "Build presence that gets you noticed and trusted",
+      "Collaborate and lead with clarity",
+    ],
+    audience: "Students, early-career professionals, and corporate teams.",
+  },
+  {
     slug: "hospitality-training",
     icon: UtensilsCrossed,
     title: "Hospitality Training",
-    desc: "The customer-service mindset and professional standards that make every guest feel genuinely valued.",
+    problem: "Your team knows the process — but guests still don't feel genuinely valued?",
+    desc: "We build the mindset and standards that turn every interaction into a five-star moment.",
     tags: "Customer Service · Operations",
     bg: "linear-gradient(155deg, #064e3b 0%, #0f766e 55%, #022c22 100%)",
     image: bannerImg,
@@ -122,7 +127,8 @@ export const SERVICES: Service[] = [
     slug: "retail-and-sales-training",
     icon: ShoppingBag,
     title: "Retail and Sales Training",
-    desc: "Interpersonal skills, persuasion, and a customer-first mindset that turn product knowledge into actual sales.",
+    problem: "Your team knows the product — but keeps losing deals at the close?",
+    desc: "We train the interpersonal skills that turn product knowledge into real revenue.",
     tags: "Selling · Customer Service · Conversion",
     bg: "linear-gradient(155deg, #7c2d12 0%, #db2777 55%, #1c1917 100%)",
     image: bannerImg,
@@ -145,7 +151,8 @@ export const SERVICES: Service[] = [
     slug: "institution-programs",
     icon: GraduationCap,
     title: "Institution Programs",
-    desc: "Corporate-readiness training, career counselling, and placement skills delivered directly to your campus.",
+    problem: "Your graduates are talented — but placement rates don't reflect it?",
+    desc: "We bring career readiness training directly to campus with proven placement outcomes.",
     tags: "College-to-Corporate · Counselling",
     bg: "linear-gradient(155deg, #78350f 0%, #d97706 55%, #1c1917 100%)",
     image: bannerImg,

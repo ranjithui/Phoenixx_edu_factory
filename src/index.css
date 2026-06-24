@@ -84,11 +84,13 @@
     scroll-padding-top: 5rem;
   }
   body {
-    @apply bg-background text-foreground font-sora antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
+    line-height: 1.7;
   }
   h1,
-  h2 {
-    font-family: "Playfair Display", Georgia, serif;
+  h2,
+  h3 {
+    font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
   }
   ::selection {
     @apply bg-primary/25;

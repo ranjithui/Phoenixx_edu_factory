@@ -76,10 +76,10 @@ export function Services() {
                       <Icon className="h-6 w-6" />
                     </span>
                     <h3 className="mt-4 text-xl font-semibold text-white sm:text-2xl">{s.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/80">{s.desc}</p>
-                    <p className="mt-3 text-xs font-medium uppercase tracking-wider text-white/70">{s.tags}</p>
+                    <p className="mt-2 text-sm italic leading-relaxed text-white/70">{s.problem}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-white/90">{s.desc}</p>
                     <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-all group-hover:gap-2.5">
-                      Learn more <ArrowRight className="h-4 w-4" />
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
                 </Link>

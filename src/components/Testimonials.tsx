@@ -3,25 +3,22 @@ import { Reveal } from "./Reveal"
 
 const TESTIMONIALS = [
   {
-    problem: "Rejected at every final interview despite being qualified.",
     quote:
-      "Before the soft skills program, I was rejected at every final interview. Within three weeks of completing the workshop, I cleared two interviews and got my first job offer.",
+      "Before Phoenixx Edu Factory, I was rejected at every final interview. Three weeks after the workshop, I got my first job offer.",
     name: "Arun K.",
     role: "Fresh Graduate",
     initials: "AK",
   },
   {
-    problem: "Stuck in the same role for two years, unable to break into a team lead position.",
     quote:
-      "I had been trying to move into a team lead role for two years. After the NLP Practitioner workshop, my manager noticed the change immediately. I got promoted within six weeks.",
+      "Tried to move into team lead for two years. After the NLP workshop, my manager noticed the change immediately. Promoted in six weeks.",
     name: "Priya K.",
     role: "BPO Professional",
     initials: "PK",
   },
   {
-    problem: "Placement rates plateaued for three years despite strong academic results.",
     quote:
-      "Our placement rates had plateaued for three years. After partnering with Phoenixx Edu Factory, we saw a 22% improvement in placement outcomes in one academic year.",
+      "Placement rates plateaued for three years. After partnering with Phoenixx Edu Factory, we saw 22% improvement in one academic year.",
     name: "Dr. Suresh M.",
     role: "Principal",
     initials: "SM",
@@ -58,10 +55,6 @@ export function Testimonials() {
                     <Star key={s} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary">
-                  The problem they came with
-                </p>
-                <p className="mt-1 text-sm font-medium leading-relaxed text-card-foreground">{t.problem}</p>
                 <blockquote className="mt-4 grow text-[15px] italic leading-relaxed text-muted-foreground">
                   "{t.quote}"
                 </blockquote>
