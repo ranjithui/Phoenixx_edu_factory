@@ -173,8 +173,10 @@ export function HeroSection() {
             />
           </div>
 
+          {/* stats cards — stacked below image on mobile, floating over it on desktop */}
+          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-0 lg:block">
           {/* floating card — circular progress, top-left */}
-          <div className="absolute -left-3 top-6 w-44 rounded-2xl border border-border bg-card p-4 shadow-xl sm:-left-6">
+          <div className="w-full rounded-2xl border border-border bg-card p-4 shadow-xl lg:absolute lg:-left-6 lg:top-6 lg:w-44">
             <div className="relative mx-auto h-24 w-24">
               <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
                 <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--border))" strokeWidth="9" />
@@ -199,7 +201,7 @@ export function HeroSection() {
           </div>
 
           {/* floating card — module list with progress bars, bottom-right */}
-          <div className="absolute -right-3 bottom-6 w-60 rounded-2xl border border-border bg-card p-4 shadow-xl sm:-right-6">
+          <div className="w-full rounded-2xl border border-border bg-card p-4 shadow-xl lg:absolute lg:-right-6 lg:bottom-6 lg:w-60">
             <div className="space-y-3">
               {MODULES.map((m) => {
                 const Icon = m.icon
@@ -223,6 +225,7 @@ export function HeroSection() {
                 )
               })}
             </div>
+          </div>
           </div>
         </div>
       </div>
