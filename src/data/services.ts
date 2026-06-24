@@ -30,12 +30,12 @@ export const SERVICES: Service[] = [
     slug: "corporate-training",
     icon: Briefcase,
     title: "Corporate Training",
-    desc: "Customized workforce development programs that build high-performing, future-ready teams.",
+    desc: "Customized workforce development built around your team's real gaps — leadership, team dynamics, and the skills that turn talent into performance.",
     tags: "Leadership · Productivity · Team Building",
     bg: "linear-gradient(155deg, #0c4a6e 0%, #1d4ed8 55%, #0f172a 100%)",
     image: bannerImg,
     intro:
-      "Great companies are built by great teams. Our Corporate Training programs are tailored to your organisation's goals — strengthening leadership, communication, and productivity so your people perform at their best and your culture stays strong as you scale.",
+      "Your team is technically capable — but misaligned communication, underdeveloped leadership, and low team cohesion are quietly costing you performance, retention, and results. Our Corporate Training delivers customized workforce development programs built around your organization's actual gaps — covering leadership communication, team dynamics, productivity, and the interpersonal skills that determine whether talented people become high-performing teams.",
     highlights: [
       { title: "Leadership Development", desc: "Build managers who coach, delegate, and inspire." },
       { title: "Team Building", desc: "Improve collaboration, trust, and accountability." },
