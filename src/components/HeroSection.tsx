@@ -110,7 +110,7 @@ export function HeroSection() {
 
           <p className="mt-6 max-w-xl text-base font-medium leading-relaxed text-foreground sm:text-lg">
             We change behavior — not just fill notebooks. Certified NLP · Soft Skills · Career
-            Workshops · 3–5 days.
+            Workshops ·
           </p>
 
           <p className="mt-6 max-w-xl text-sm font-light leading-relaxed text-muted-foreground">
