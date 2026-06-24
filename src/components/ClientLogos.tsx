@@ -1,20 +1,30 @@
-import { Hexagon, Aperture, Box, Gem, Orbit, Shapes } from "lucide-react"
 import { Reveal } from "./Reveal"
 
 /**
- * Placeholder client/partner logos.
- * TODO: replace each entry with a real logo — swap the <Icon/> + name block for
- * an <img src={...} alt="Brand" className="h-8 w-auto" /> (drop files in
- * src/assets/ and import them, or use /public paths).
+ * Client / partner logos.
+ *
+ * Drop logo image files into  src/assets/clientlogo/  named  client1, client2, …
+ * ANY image format works (png, jpg, jpeg, svg, webp, gif, avif). They are picked
+ * up automatically — no imports to edit — and shown in numeric order.
  */
-const LOGOS = [
-  { name: "TeaserTech", icon: Hexagon },
-  { name: "Brightpath", icon: Aperture },
-  { name: "Vertas", icon: Box },
-  { name: "Lumina", icon: Gem },
-  { name: "Drait Labs", icon: Orbit },
-  { name: "Santhii", icon: Shapes },
-]
+const modules = import.meta.glob("../assets/clientlogo/*", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>
+
+// natural sort by the number in the filename (client1 < client2 < … < client10)
+const numberIn = (path: string) => parseInt(path.match(/(\d+)/)?.[1] ?? "0", 10)
+// only treat image files as logos (ignore stray README/other files)
+const IMAGE_RE = /\.(png|jpe?g|jfif|pjpeg|pjp|svg|webp|gif|avif|bmp|ico)$/i
+
+const LOGOS = Object.entries(modules)
+  .filter(([path]) => IMAGE_RE.test(path))
+  .sort(([a], [b]) => numberIn(a) - numberIn(b))
+  .map(([path, src]) => {
+    const name = path.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "Client logo"
+    return { src, name }
+  })
 
 export function ClientLogos() {
   return (
@@ -28,28 +38,27 @@ export function ClientLogos() {
             Because results speak louder than promises.
           </p>
         </Reveal>
-        <Reveal delay={0.05}>
-          {/* seamless auto-scrolling marquee — duplicated list loops on -50%
-              translate; pauses on hover. Edges fade out via the mask. */}
-          <div
-            className="mt-9 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
-          >
-            <div className="flex w-max animate-marquee items-center hover:[animation-play-state:paused]">
-              {[...LOGOS, ...LOGOS].map((l, i) => {
-                const Icon = l.icon
-                return (
-                  <div
-                    key={i}
-                    className="flex shrink-0 items-center justify-center gap-2 px-10 text-muted-foreground/60 grayscale transition-all duration-300 hover:scale-105 hover:text-primary hover:grayscale-0"
-                  >
-                    <Icon className="h-6 w-6" />
-                    <span className="text-lg font-semibold tracking-tight">{l.name}</span>
+
+        {LOGOS.length > 0 && (
+          <Reveal delay={0.05}>
+            {/* seamless auto-scrolling marquee — duplicated list loops on -50%
+                translate; pauses on hover. Edges fade out via the mask. */}
+            <div className="mt-9 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+              <div className="flex w-max animate-marquee items-center hover:[animation-play-state:paused]">
+                {[...LOGOS, ...LOGOS].map((l, i) => (
+                  <div key={i} className="flex shrink-0 items-center justify-center px-10">
+                    <img
+                      src={l.src}
+                      alt={l.name}
+                      loading="lazy"
+                      className="h-10 w-auto object-contain opacity-70 transition-all duration-300 hover:scale-105 hover:opacity-100"
+                    />
                   </div>
-                )
-              })}
+                ))}
+              </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        )}
       </div>
     </section>
   )
