@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react"
 import {
   Sparkles,
   ArrowRight,
-  Play,
-  X,
   MessageSquare,
   Users,
   Activity,
@@ -13,8 +11,7 @@ import {
   Gem,
   Aperture,
 } from "lucide-react"
-import heroVideo from "../assets/hero.mp4"
-import heroPoster from "../assets/hero-poster.jpg"
+import heroSeminar from "../assets/hero-seminar1.jpg"
 
 // Final values the cards count up to.
 const TARGETS = { score: 89, completion: 92, satisfaction: 4.9, placement: 88 }
@@ -38,22 +35,6 @@ const PARTNERS = [
 export function HeroSection() {
   const mediaRef = useRef<HTMLDivElement | null>(null)
   const [vals, setVals] = useState({ score: 0, completion: 0, satisfaction: 0, placement: 0 })
-  const [videoOpen, setVideoOpen] = useState(false)
-
-  // Close the video lightbox on Escape, and lock body scroll while it's open.
-  useEffect(() => {
-    if (!videoOpen) return
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setVideoOpen(false)
-    }
-    window.addEventListener("keydown", onKey)
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = "hidden"
-    return () => {
-      window.removeEventListener("keydown", onKey)
-      document.body.style.overflow = prevOverflow
-    }
-  }, [videoOpen])
 
   // Count-up + bar-fill animation, triggered once the media scrolls into view.
   useEffect(() => {
@@ -157,20 +138,23 @@ export function HeroSection() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-all hover:opacity-90 active:scale-[0.97]"
+              className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-orange-600 active:scale-[0.97]"
             >
               Get Started <ArrowRight className="h-4 w-4" />
             </a>
-            <button
-              type="button"
-              onClick={() => setVideoOpen(true)}
-              className="group inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-primary/50"
+            <a
+              href="https://wa.me/919342721163?text=Hi%20Phoenixx%20Edu%2C%20I%27d%20like%20to%20connect%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-orange-500 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-orange-600 active:scale-[0.97]"
             >
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary transition-transform group-hover:scale-110">
-                <Play className="h-3.5 w-3.5 translate-x-px fill-current" />
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/20 text-white transition-transform group-hover:scale-110">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
               </span>
-              Watch video
-            </button>
+              Connect with us
+            </a>
           </div>
         </div>
 
@@ -180,25 +164,13 @@ export function HeroSection() {
           className="relative animate-fade-up opacity-0 lg:pl-6"
           style={{ animationDelay: "0.15s" }}
         >
-          {/* main media */}
+          {/* main media — HD seminar photo */}
           <div className="relative overflow-hidden rounded-[2rem] border border-border bg-secondary shadow-2xl">
-            <video
+            <img
+              src={heroSeminar}
+              alt="Phoenixx Edu training seminar in session"
               className="h-full min-h-[24rem] w-full object-cover lg:min-h-[32rem]"
-              poster={heroPoster}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source src={heroVideo} type="video/mp4" />
-            </video>
-
-            {/* theme-adaptive shade over the video — white in light mode,
-                black in dark mode (both derive from --background). A flat 40%
-                fade in both modes, plus a soft bottom gradient for depth. */}
-            <div className="pointer-events-none absolute inset-0 bg-background/40" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+            />
           </div>
 
           {/* floating card — circular progress, top-left */}
@@ -254,40 +226,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* ───────── video lightbox — full clip with sound + controls ───────── */}
-      {videoOpen && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm animate-fade-up"
-          onClick={() => setVideoOpen(false)}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Phoenixx Edu video"
-        >
-          <button
-            type="button"
-            onClick={() => setVideoOpen(false)}
-            className="absolute right-5 top-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
-            aria-label="Close video"
-          >
-            <X className="h-5 w-5" />
-          </button>
-
-          <div
-            className="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <video
-              className="aspect-video w-full bg-black"
-              poster={heroPoster}
-              src={heroVideo}
-              controls
-              autoPlay
-              playsInline
-            />
-          </div>
-        </div>
-      )}
     </section>
   )
 }

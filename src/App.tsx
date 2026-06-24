@@ -46,7 +46,7 @@ function App() {
   const isHome = pathname === "/"
 
   return (
-    <div className="relative flex min-h-screen flex-col bg-background">
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-background">
       <ScrollToTop />
       {/* header — on every page */}
       <Navbar />

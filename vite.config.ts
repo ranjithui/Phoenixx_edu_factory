@@ -10,4 +10,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    // Use polling instead of native fs.watch. On Windows, native watching
+    // crashes with EBUSY when a media file is dropped into a watched folder
+    // while it's still being copied/locked. Polling is immune to that.
+    watch: {
+      usePolling: true,
+      interval: 300,
+    },
+  },
 })

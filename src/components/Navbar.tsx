@@ -43,7 +43,7 @@ export function Navbar() {
         <Logo />
 
         {/* Center links */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           <SectionLink hash="#about" className={linkClass}>About</SectionLink>
 
           {/* Services dropdown */}
@@ -91,7 +91,7 @@ export function Navbar() {
         {/* Right actions */}
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <SectionLink hash="#contact" className="hidden md:inline-flex">
+          <SectionLink hash="#contact" className="hidden lg:inline-flex">
             <Button
               variant="default"
               size="lg"
@@ -105,7 +105,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="grid h-10 w-10 place-items-center rounded-lg border border-border bg-nav-button text-foreground transition-colors hover:bg-nav-button/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-lg border border-border bg-nav-button text-foreground transition-colors hover:bg-nav-button/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -114,7 +114,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="mx-4 mb-3 max-h-[80vh] overflow-y-auto rounded-xl border border-border bg-card/95 p-2 shadow-lg backdrop-blur-md md:hidden">
+        <div className="mx-4 mb-3 max-h-[80vh] overflow-y-auto rounded-xl border border-border bg-card/95 p-2 shadow-lg backdrop-blur-md lg:hidden">
           <SectionLink
             hash="#about"
             onClick={() => setOpen(false)}

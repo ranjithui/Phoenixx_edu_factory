@@ -22,14 +22,20 @@ const INTERESTS = [
 const inputCls =
   "mt-2 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/25"
 
+// Formspree endpoint — create a form at https://formspree.io with its destination
+// set to phoenixxittech@gmail.com, then replace "your-form-id" with the ID it gives you.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id"
+
 export function Contact() {
   const [errors, setErrors] = useState<Record<string, boolean>>({})
   const [sending, setSending] = useState(false)
   const [done, setDone] = useState(false)
+  const [failed, setFailed] = useState(false)
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const fd = new FormData(e.currentTarget)
+    const form = e.currentTarget
+    const fd = new FormData(form)
     const name = String(fd.get("name") ?? "").trim()
     const email = String(fd.get("email") ?? "").trim()
     const message = String(fd.get("message") ?? "").trim()
@@ -41,15 +47,23 @@ export function Contact() {
     setErrors(next)
     if (Object.values(next).some(Boolean)) return
 
+    setFailed(false)
     setSending(true)
-    const form = e.currentTarget
-    // Simulated async submit — wire to your backend / Formspree here.
-    window.setTimeout(() => {
-      setSending(false)
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: fd,
+      })
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`)
       setDone(true)
       form.reset()
       window.setTimeout(() => setDone(false), 6000)
-    }, 1200)
+    } catch {
+      setFailed(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -145,6 +159,12 @@ export function Contact() {
               {done && (
                 <p role="status" className="mt-4 flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-3 text-sm font-medium text-primary">
                   <Check className="h-5 w-5" /> Thank you! Your message has been received.
+                </p>
+              )}
+
+              {failed && (
+                <p role="alert" className="mt-4 rounded-lg bg-destructive/10 px-4 py-3 text-sm font-medium text-destructive">
+                  Something went wrong. Please try again, or email us directly at hr@phoenixxedu.com.
                 </p>
               )}
             </form>
