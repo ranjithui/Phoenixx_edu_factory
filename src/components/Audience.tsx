@@ -1,4 +1,4 @@
-import { GraduationCap, Briefcase, Building2, HeartHandshake, ArrowRight } from "lucide-react"
+import { GraduationCap, Briefcase, Building2, HeartHandshake } from "lucide-react"
 import { Reveal } from "./Reveal"
 
 const AUDIENCE = [
@@ -61,12 +61,6 @@ export function Audience() {
                 <h3 className="relative mt-4 text-lg font-semibold text-card-foreground">{a.title}</h3>
                 <p className="relative mt-2 text-sm italic leading-relaxed text-muted-foreground">{a.problem}</p>
                 <p className="relative mt-2 grow text-sm leading-relaxed text-muted-foreground">{a.solution}</p>
-                <a
-                  href="#contact"
-                  className="relative mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-2.5"
-                >
-                  {a.cta} <ArrowRight className="h-4 w-4" />
-                </a>
               </div>
             </Reveal>
           ))}

@@ -11,7 +11,6 @@ import { Testimonials } from "./components/Testimonials"
 import { ClientLogos } from "./components/ClientLogos"
 import { Contact } from "./components/Contact"
 import { Footer } from "./components/Footer"
-import { ScrollZigzag } from "./components/ScrollZigzag"
 import { FloatingCTA } from "./components/FloatingCTA"
 import { ServicePage } from "./components/ServicePage"
 
@@ -42,9 +41,6 @@ function ScrollToTop() {
 }
 
 function App() {
-  const { pathname } = useLocation()
-  const isHome = pathname === "/"
-
   return (
     <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-background">
       <ScrollToTop />
@@ -62,9 +58,6 @@ function App() {
 
       {/* footer — on every page */}
       <Footer />
-      {/* zigzag weaves between the home sections — home page only (its self-sizing
-          overlay would otherwise inflate the height of short service pages) */}
-      {isHome && <ScrollZigzag />}
       <FloatingCTA />
 
       {/* subtle grain texture for premium depth */}
