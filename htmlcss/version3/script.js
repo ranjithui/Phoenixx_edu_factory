@@ -609,7 +609,6 @@ function initClientLogos() {
 function initContactForm() {
   const form = $("#contact-form");
   if (!form) return;
-  const success = $("#form-success");
   const fail = $("#form-fail");
   const submitBtn = $("#submit-btn");
 
@@ -649,9 +648,7 @@ function initContactForm() {
         body: fd,
       });
       if (!res.ok) throw new Error("Request failed: " + res.status);
-      success.removeAttribute("hidden");
       form.reset();
-      window.setTimeout(() => success.setAttribute("hidden", ""), 6000);
     } catch {
       fail.removeAttribute("hidden");
     } finally {
