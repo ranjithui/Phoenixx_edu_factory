@@ -1,0 +1,87 @@
+<%- include('partials/header') %>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Tasks</h3>
+    <% if (isManager) { %>
+        <button class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#newTask">
+            <i class="bi bi-plus-lg"></i> Create task
+        </button>
+    <% } %>
+</div>
+
+<% if (created) { %>
+    <div class="alert alert-success">Task created.</div>
+<% } %>
+
+<% if (isManager) { %>
+<div class="collapse <%= showNew ? 'show' : '' %> mb-4" id="newTask">
+  <div class="card card-body shadow-sm">
+    <form method="post" action="tasks">
+      <input type="hidden" name="do" value="create">
+      <input type="hidden" name="csrf" value="<%- e(csrfToken) %>">
+      <div class="row g-3">
+        <div class="col-md-6"><label class="form-label">Title</label>
+            <input name="title" class="form-control" required></div>
+        <div class="col-md-3"><label class="form-label">Priority</label>
+            <select name="priority" class="form-select">
+                <option>Low</option><option selected>Medium</option><option>High</option><option>Critical</option>
+            </select></div>
+        <div class="col-md-3"><label class="form-label">Due date</label>
+            <input type="date" name="due_date" class="form-control"></div>
+        <div class="col-12"><label class="form-label">Description</label>
+            <textarea name="description" class="form-control" rows="2"></textarea></div>
+        <div class="col-12"><label class="form-label">Assign to (Ctrl/Cmd-click for multiple)</label>
+            <select name="assigned_to[]" class="form-select" multiple size="5" required>
+                <% employees.forEach(function(emp){ %>
+                    <option value="<%= emp.id %>"><%- e(emp.name) %><%- emp.department ? ' — '+e(emp.department) : '' %></option>
+                <% }); %>
+            </select></div>
+      </div>
+      <button class="btn btn-dark mt-3">Save task</button>
+    </form>
+  </div>
+</div>
+<% } %>
+
+<div class="card shadow-sm">
+<div class="table-responsive">
+<table class="table table-hover align-middle mb-0">
+    <thead class="table-light">
+        <tr><th>Title</th><th>Assignees</th><th>Priority</th><th>Due</th><th>Status</th><th></th></tr>
+    </thead>
+    <tbody>
+    <% if (!tasks.length) { %>
+        <tr><td colspan="6" class="text-center text-muted py-4">No tasks yet.</td></tr>
+    <% } %>
+    <% tasks.forEach(function(t){
+        var overdue = t.status !== 'Completed' && t.due_date && t.due_date < todayStr; %>
+        <tr>
+            <td>
+                <div class="fw-semibold"><%- e(t.title) %></div>
+                <% if (t.description) { %><div class="small text-muted"><%- e(t.description) %></div><% } %>
+            </td>
+            <td class="small"><%- e(t.assignees || '—') %></td>
+            <td><span class="badge bg-<%= prColors[t.priority] %>"><%- e(t.priority) %></span></td>
+            <td class="<%= overdue ? 'text-danger fw-bold' : '' %>">
+                <%- t.due_date ? e(t.due_date) : '—' %>
+                <% if (overdue) { %><i class="bi bi-exclamation-triangle"></i><% } %>
+            </td>
+            <td><span class="badge bg-<%= stColors[t.status] %>"><%- e(t.status) %></span></td>
+            <td>
+                <form method="post" action="tasks" class="d-flex gap-1">
+                    <input type="hidden" name="do" value="status">
+                    <input type="hidden" name="csrf" value="<%- e(csrfToken) %>">
+                    <input type="hidden" name="task_id" value="<%= t.id %>">
+                    <select name="status" class="form-select form-select-sm" style="width:auto" onchange="this.form.submit()">
+                        <% ['Pending','In Progress','Completed'].forEach(function(s){ %>
+                            <option <%= t.status===s?'selected':'' %>><%= s %></option>
+                        <% }); %>
+                    </select>
+                </form>
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
+</div>
+</div>
+<%- include('partials/footer') %>

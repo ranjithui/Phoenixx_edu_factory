@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<h3 class="mb-4">Dashboard</h3>
+<div class="row g-3">
+    <% cards.forEach(function(c){ var label=c[0], value=c[1], color=c[2], icon=c[3]; %>
+        <div class="col-6 col-md-4 col-lg-2">
+            <div class="card border-<%= color %> shadow-sm h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-<%= icon %> fs-3 text-<%= color %>"></i>
+                    <div class="display-6 fw-bold"><%= value %></div>
+                    <div class="text-muted small"><%- e(label) %></div>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+<div class="mt-4">
+    <a href="tasks" class="btn btn-dark"><i class="bi bi-list-task"></i> View tasks</a>
+    <% if (isManager) { %>
+        <a href="tasks?new=1" class="btn btn-outline-dark"><i class="bi bi-plus-lg"></i> Create task</a>
+    <% } %>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Employees</h3>
+    <% if (isAdmin) { %>
+        <button class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#newUser">
+            <i class="bi bi-person-plus"></i> Add employee
+        </button>
+    <% } %>
+</div>
+<% if (msg) { %><div class="alert alert-info"><%- e(msg) %></div><% } %>
+
+<% if (isAdmin) { %>
+<div class="collapse mb-4" id="newUser">
+  <div class="card card-body shadow-sm">
+    <form method="post" action="employees" class="row g-3">
+        <input type="hidden" name="do" value="create">
+        <input type="hidden" name="csrf" value="<%- e(csrfToken) %>">
+        <div class="col-md-4"><label class="form-label">Name</label><input name="name" class="form-control" required></div>
+        <div class="col-md-4"><label class="form-label">Email</label><input type="email" name="email" class="form-control" required></div>
+        <div class="col-md-4"><label class="form-label">Department</label><input name="department" class="form-control"></div>
+        <div class="col-md-4"><label class="form-label">Role</label>
+            <select name="role" class="form-select"><option>Employee</option><option>Manager</option><option>Admin</option></select></div>
+        <div class="col-md-4"><label class="form-label">Temp password (8+ chars)</label><input type="text" name="password" class="form-control" required></div>
+        <div class="col-12"><button class="btn btn-dark">Add</button></div>
+    </form>
+  </div>
+</div>
+<% } %>
+
+<div class="card shadow-sm"><div class="table-responsive">
+<table class="table table-hover mb-0">
+    <thead class="table-light"><tr><th>Name</th><th>Email</th><th>Role</th><th>Department</th><th>Status</th></tr></thead>
+    <tbody>
+    <% users.forEach(function(u){ %>
+        <tr>
+            <td><%- e(u.name) %></td>
+            <td><%- e(u.email) %></td>
+            <td><span class="badge bg-secondary"><%- e(u.role) %></span></td>
+            <td><%- e(u.department || '—') %></td>
+            <td><%- u.is_active ? '<span class="text-success">Active</span>' : '<span class="text-muted">Inactive</span>' %></td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
+</div></div>
+<%- include('partials/footer') %>

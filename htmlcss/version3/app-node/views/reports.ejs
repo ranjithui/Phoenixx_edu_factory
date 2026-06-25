@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+<h3 class="mb-4">Reports</h3>
+
+<%
+  var num = function(v){ return Number(v || 0); };
+  var overallCards = [['Completed','completed','success'],['Pending','pending','warning'],['In Progress','in_progress','info'],['Overdue','overdue','danger']];
+%>
+<div class="row g-3 mb-4">
+    <% overallCards.forEach(function(c){ var lbl=c[0], k=c[1], col=c[2]; %>
+    <div class="col-6 col-md-3">
+        <div class="card border-<%= col %> shadow-sm"><div class="card-body text-center">
+            <div class="display-6 fw-bold text-<%= col %>"><%= num(overall[k]) %></div>
+            <div class="text-muted small"><%= lbl %></div>
+        </div></div>
+    </div>
+    <% }); %>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header fw-semibold">Employee productivity</div>
+    <div class="table-responsive"><table class="table mb-0">
+        <thead class="table-light"><tr><th>Employee</th><th>Department</th><th>Total</th><th>Completed</th><th>Overdue</th></tr></thead>
+        <tbody>
+        <% byEmployee.forEach(function(r){ %>
+            <tr><td><%- e(r.name) %></td><td><%- e(r.department || '—') %></td>
+                <td><%= num(r.total) %></td><td class="text-success"><%= num(r.completed) %></td>
+                <td class="text-danger"><%= num(r.overdue) %></td></tr>
+        <% }); %>
+        </tbody>
+    </table></div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header fw-semibold">Department-wise</div>
+    <div class="table-responsive"><table class="table mb-0">
+        <thead class="table-light"><tr><th>Department</th><th>Total tasks</th><th>Completed</th></tr></thead>
+        <tbody>
+        <% byDept.forEach(function(r){ %>
+            <tr><td><%- e(r.dept) %></td><td><%= num(r.total) %></td><td><%= num(r.completed) %></td></tr>
+        <% }); %>
+        </tbody>
+    </table></div>
+</div>
+<%- include('partials/footer') %>
