@@ -1,0 +1,5 @@
+# Never execute uploaded files as scripts.
+php_flag engine off
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|cgi)$">
+    Require all denied
+</FilesMatch>

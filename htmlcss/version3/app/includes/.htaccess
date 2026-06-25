@@ -1,0 +1,2 @@
+# Block direct web access to PHP includes (config, db, auth).
+Require all denied
