@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phoenixx Edu Factory — Rise. Learn. Excel.</title>
+    <meta
+      name="description"
+      content="Phoenixx Edu Factory is a corporate training institute in Coimbatore offering soft skills, life skills, NLP, hospitality, retail, and corporate workshops for students, professionals, and organizations."
+    />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Apply persisted theme before paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var t = localStorage.getItem("phoenixx-theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (t === "dark" || (!t && prefersDark)) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="navbar" id="navbar">
+      <nav class="nav-inner">
+        <a href="index.html" class="logo" aria-label="Phoenixx Edu Factory home">
+          <img src="assets/logo.png" alt="Phoenixx Edu Factory" />
+        </a>
+
+        <!-- center links (desktop) -->
+        <div class="nav-links">
+          <a href="#about" class="nav-link section-link">About</a>
+
+          <!-- services dropdown -->
+          <div class="nav-dropdown" id="services-dropdown">
+            <button type="button" class="nav-link nav-dropdown-btn" aria-expanded="false">
+              Services
+              <i data-lucide="chevron-down" class="dd-chevron"></i>
+            </button>
+            <div class="nav-dropdown-menu" hidden>
+              <div class="nav-dropdown-inner" id="services-menu"><!-- filled by JS --></div>
+            </div>
+          </div>
+
+          <a href="#audience" class="nav-link section-link">Who We Serve</a>
+          <a href="#contact" class="nav-link section-link">Contact</a>
+        </div>
+
+        <!-- right actions -->
+        <div class="nav-actions">
+          <button type="button" id="theme-toggle" class="icon-btn theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+          <a href="#contact" class="btn btn-primary btn-nav-cta section-link">Get Quotes</a>
+          <button type="button" id="menu-toggle" class="icon-btn menu-toggle" aria-label="Open menu" aria-expanded="false">
+            <i data-lucide="menu" class="icon-menu"></i>
+            <i data-lucide="x" class="icon-close"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- mobile menu -->
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <a href="#about" class="mm-link section-link">About</a>
+        <p class="mm-group-label">Services</p>
+        <div id="mobile-services"><!-- filled by JS --></div>
+        <div class="mm-divider">
+          <a href="#audience" class="mm-link section-link">Who We Serve</a>
+          <a href="#contact" class="mm-link section-link">Contact</a>
+        </div>
+        <a href="#contact" class="mm-cta section-link">Get Quotes</a>
+      </div>
+    </header>
+
+    <!-- scroll progress zigzag -->
+    <svg id="zigzag" class="zigzag" aria-hidden="true" fill="none"></svg>
+
+    <main>
+      <!-- ===================== HERO ===================== -->
+      <section id="home" class="hero">
+        <!-- soft brand glow -->
+        <div class="hero-glow" aria-hidden="true">
+          <span class="glow glow-1"></span>
+          <span class="glow glow-2"></span>
+        </div>
+
+        <div class="hero-grid">
+          <!-- LEFT — content -->
+          <div class="hero-left fade-up">
+            <span class="hero-badge">Phoenixx Edu <i data-lucide="sparkles"></i></span>
+
+            <h1 class="hero-title">
+              Struggling With Skills, Confidence, or Career Growth?<br />
+              <span class="text-gradient-ember">Over 1,000 People Already Broke Through.</span>
+            </h1>
+
+            <p class="hero-sub">
+              We change behavior — not just fill notebooks. Certified NLP · Soft Skills · Career
+              Workshops ·
+            </p>
+
+            <p class="hero-note">You already know what's holding you back —</p>
+
+            <!-- pain points -->
+            <div class="pain-points">
+              <div class="pain-point"><span class="dot"></span>Nerves before every presentation</div>
+              <div class="pain-point"><span class="dot"></span>Interviews that go nowhere</div>
+              <div class="pain-point"><span class="dot"></span>The promotion that keeps waiting</div>
+              <div class="pain-point"><span class="dot"></span>The career plateau that won't break</div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-orange section-link">Get Started <i data-lucide="arrow-right"></i></a>
+              <a
+                href="https://wa.me/919342721163?text=Hi%20Phoenixx%20Edu%2C%20I%27d%20like%20to%20connect%20with%20you."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-orange btn-whatsapp"
+              >
+                <span class="wa-badge">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                  </svg>
+                </span>
+                Connect with us
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT — media + floating cards -->
+          <div class="hero-right fade-up" id="hero-media" style="--d: 0.15s">
+            <div class="hero-image">
+              <img src="assets/hero-seminar1.jpg" alt="Phoenixx Edu training seminar in session" />
+            </div>
+
+            <div class="hero-cards">
+              <!-- completion ring card -->
+              <div class="float-card ring-card">
+                <div class="ring-wrap">
+                  <svg viewBox="0 0 100 100" class="ring-svg">
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--border))" stroke-width="9" />
+                    <circle
+                      id="ring-value" cx="50" cy="50" r="40" fill="none" stroke="hsl(var(--primary))"
+                      stroke-width="9" stroke-linecap="round"
+                    />
+                  </svg>
+                  <div class="ring-center"><span id="ring-num">0%</span></div>
+                </div>
+                <p class="ring-title">Completion Rate</p>
+                <p class="ring-sub">Phoenixx Programs</p>
+              </div>
+
+              <!-- module bars card -->
+              <div class="float-card module-card" id="module-card"><!-- filled by JS --></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TRUST STRIP ===================== -->
+      <section aria-label="What we offer" class="trust-strip">
+        <div class="marquee-track" id="trust-track"><!-- filled by JS --></div>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section id="about" class="section">
+        <div class="container narrow">
+          <div class="about-center">
+            <p class="eyebrow reveal">About Us</p>
+            <p class="about-quote reveal" style="--d:.05s">"We don't teach skills.<br />We engineer transformation."</p>
+            <h2 class="about-h2 reveal" style="--d:.08s">Most training institutes teach content. We change behavior.</h2>
+            <p class="lead reveal" style="--d:.1s">
+              Traditional workshops fill notebooks. Phoenixx Edu Factory fills gaps — working at the
+              level of mindset, habits, and communication patterns that actually change how you
+              perform.
+            </p>
+
+            <div class="stat-pill reveal" style="--d:.15s">
+              <p class="stat-item"><span class="count" data-to="97" data-suffix="%">0%</span> <span class="stat-label">satisfaction</span></p>
+              <span class="stat-sep"></span>
+              <p class="stat-item"><span class="count" data-to="91" data-suffix="%">0%</span> <span class="stat-label">placement</span></p>
+              <span class="stat-sep"></span>
+              <p class="stat-item"><span class="count" data-to="8" data-suffix="+">0+</span> <span class="stat-label">programs</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SERVICES (accordion) ===================== -->
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow eyebrow-line reveal">Our Services</p>
+            <h2 class="h2 reveal" style="--d:.05s">Find the program that solves your <span class="text-gradient-ember">specific challenge</span></h2>
+            <p class="lead reveal" style="--d:.1s">Every program at Phoenixx Edu Factory is built around a real problem that real people face. Find yours below.</p>
+          </div>
+
+          <div class="svc-accordion reveal" id="svc-accordion" style="--d:.15s"><!-- filled by JS --></div>
+        </div>
+      </section>
+
+      <!-- ===================== INDUSTRIES ===================== -->
+      <section aria-label="Industries we serve" class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow eyebrow-line reveal">Industries We Serve</p>
+            <h2 class="h2 reveal" style="--d:.05s">Training that fits <span class="text-gradient-ember">every sector</span></h2>
+            <p class="lead reveal" style="--d:.1s">Hover an industry to see the programs we deliver for it.</p>
+          </div>
+
+          <div class="ind-grid reveal" style="--d:.15s">
+            <div class="ind-selector" id="ind-selector"><!-- filled by JS --></div>
+            <div class="ind-detail">
+              <div class="ind-panel" id="ind-panel"><!-- filled by JS --></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== AUDIENCE ===================== -->
+      <section id="audience" class="section section-alt">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow eyebrow-line reveal">Who We Serve</p>
+            <h2 class="h2 reveal" style="--d:.05s">Pick the path that fits you</h2>
+          </div>
+
+          <div class="audience-grid">
+            <div class="audience-card reveal"><span class="aud-icon"><i data-lucide="briefcase"></i></span><h3>Professionals &amp; Corporate Teams</h3><p class="prob">Stuck at the same level while others get promoted?</p><p class="sol">We build the leadership presence and communication skills that make career growth stop stalling.</p></div>
+            <div class="audience-card reveal" style="--d:.05s"><span class="aud-icon"><i data-lucide="building-2"></i></span><h3>Institutions</h3><p class="prob">Placement rates don't reflect the quality of your graduates?</p><p class="sol">We bring structured career readiness training to campus with proven placement outcomes.</p></div>
+            <div class="audience-card reveal" style="--d:.1s"><span class="aud-icon"><i data-lucide="graduation-cap"></i></span><h3>Students</h3><p class="prob">Qualified on paper — but not ready for the room?</p><p class="sol">We close the gap between your degree and what employers need on day one.</p></div>
+            <div class="audience-card reveal" style="--d:.15s"><span class="aud-icon"><i data-lucide="heart-handshake"></i></span><h3>Communities</h3><p class="prob">Most training wasn't built for people without a head start.</p><p class="sol">Ours was. Practical skills for neighborhoods, NGOs, and community organizations.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TESTIMONIALS ===================== -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow eyebrow-line reveal">Stories of Growth</p>
+            <h2 class="h2 reveal" style="--d:.05s">Real people. Real problems. Real results.</h2>
+            <p class="lead reveal" style="--d:.1s">These aren't success stories that happened by accident. They're what happens when the right training meets the right moment.</p>
+          </div>
+
+          <div class="testimonials-grid">
+            <figure class="testimonial reveal">
+              <div class="stars" aria-label="5 out of 5 stars"></div>
+              <blockquote>"Before Phoenixx Edu Factory, I was rejected at every final interview. Three weeks after the workshop, I got my first job offer."</blockquote>
+              <figcaption><span class="avatar">AK</span><span><span class="t-name">Arun K.</span><span class="t-role">Fresh Graduate</span></span></figcaption>
+            </figure>
+            <figure class="testimonial reveal" style="--d:.06s">
+              <div class="stars" aria-label="5 out of 5 stars"></div>
+              <blockquote>"Tried to move into team lead for two years. After the NLP workshop, my manager noticed the change immediately. Promoted in six weeks."</blockquote>
+              <figcaption><span class="avatar">PK</span><span><span class="t-name">Priya K.</span><span class="t-role">BPO Professional</span></span></figcaption>
+            </figure>
+            <figure class="testimonial reveal" style="--d:.12s">
+              <div class="stars" aria-label="5 out of 5 stars"></div>
+              <blockquote>"Placement rates plateaued for three years. After partnering with Phoenixx Edu Factory, we saw 22% improvement in one academic year."</blockquote>
+              <figcaption><span class="avatar">SM</span><span><span class="t-name">Dr. Suresh M.</span><span class="t-role">Principal</span></span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CLIENT LOGOS ===================== -->
+      <section aria-label="Our partners" class="clients">
+        <div class="container">
+          <p class="clients-title reveal">Trusted by institutions &amp; organizations</p>
+          <p class="clients-sub reveal" style="--d:.05s">Because results speak louder than promises.</p>
+          <div class="clients-marquee reveal" style="--d:.05s">
+            <div class="marquee-track" id="clients-track"><!-- filled by JS --></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="section section-alt">
+        <div class="container">
+          <div class="contact-grid">
+            <div>
+              <p class="eyebrow eyebrow-line reveal">Contact Us</p>
+              <h2 class="h2 reveal" style="--d:.05s">Not sure which program is right for you? <span class="text-primary">Let's figure it out.</span></h2>
+              <p class="lead reveal" style="--d:.1s">Just tell us where you are — we'll point you in the right direction.</p>
+
+              <ul class="contact-info">
+                <li class="reveal"><span class="ci-icon"><i data-lucide="phone"></i></span><div><p class="ci-label">Phone</p><a href="tel:+919342721163">+91 93427 21163</a></div></li>
+                <li class="reveal" style="--d:.04s"><span class="ci-icon"><i data-lucide="mail"></i></span><div><p class="ci-label">Email</p><a href="mailto:hr@phoenixxedu.com">hr@phoenixxedu.com</a></div></li>
+                <li class="reveal" style="--d:.08s"><span class="ci-icon"><i data-lucide="map-pin"></i></span><div><p class="ci-label">Office</p><p class="ci-val">3/29, 3rd Floor, Jaya Nagar, Vadavalli, Coimbatore – 641041</p></div></li>
+                <li class="reveal" style="--d:.12s"><span class="ci-icon"><i data-lucide="clock"></i></span><div><p class="ci-label">Hours</p><p class="ci-val">Sun – Fri, 8:00 AM – 5:00 PM</p></div></li>
+              </ul>
+            </div>
+
+            <form class="contact-form reveal" style="--d:.1s" id="contact-form" novalidate>
+              <h3 class="form-title">Send us a message</h3>
+              <p class="form-sub">We'll get back to you within one business day.</p>
+
+              <div class="form-grid">
+                <div>
+                  <label for="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" autocomplete="given-name" placeholder="First name" />
+                  <p class="field-error" data-for="firstName">Please enter your first name.</p>
+                </div>
+                <div>
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" autocomplete="family-name" placeholder="Last name" />
+                  <p class="field-error" data-for="lastName">Please enter your last name.</p>
+                </div>
+                <div class="col-2">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 ..." />
+                </div>
+                <div class="col-2">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+                  <p class="field-error" data-for="email">Please enter a valid email address.</p>
+                </div>
+                <div class="col-2">
+                  <label for="interest">I'm interested in</label>
+                  <select id="interest" name="interest">
+                    <option>NLP Workshops — Basic</option>
+                    <option>NLP Workshops — Practitioner</option>
+                    <option>NLP Workshops — Master Practitioner</option>
+                    <option>Life Skills Training</option>
+                    <option>Hospitality Training</option>
+                    <option>Retail &amp; Sales Training</option>
+                    <option>Corporate Training</option>
+                    <option>Institution Programs</option>
+                    <option>Career Counselling</option>
+                    <option>I'm not sure — help me choose</option>
+                  </select>
+                </div>
+                <div class="col-2">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help..."></textarea>
+                  <p class="field-error" data-for="message">Please enter a message.</p>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Submit Now</button>
+              <p class="form-success" id="form-success" hidden><i data-lucide="check"></i> Thank you! Your message has been received.</p>
+              <p class="form-fail" id="form-fail" hidden>Something went wrong. Please try again, or email us directly at hr@phoenixxedu.com.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="footer-accent"></div>
+      <div class="container footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" aria-label="Phoenixx Edu Factory home" class="footer-logo">
+              <img src="assets/logo.png" alt="Phoenixx Edu Factory" />
+            </a>
+            <p class="footer-desc">Closing the gap between education and employability — for students, professionals, and organizations across Tamil Nadu.</p>
+            <div class="socials" id="footer-socials"><!-- filled by JS --></div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul id="footer-services"><!-- filled by JS --></ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Get in Touch</h4>
+            <ul>
+              <li><a href="tel:+919342721163">+91 93427 21163</a></li>
+              <li><a href="mailto:hr@phoenixxedu.com">hr@phoenixxedu.com</a></li>
+              <li class="muted">Vadavalli, Coimbatore – 641041</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p id="copyright">© Phoenixx Edu Factory. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <span class="sep"></span>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- floating CTA -->
+    <a href="#contact" class="floating-cta section-link" id="floating-cta">
+      <i data-lucide="calendar-check"></i> Book a Demo
+    </a>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
