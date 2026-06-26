@@ -7,9 +7,9 @@
  */
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'phoenixx_tasks');   // your database name
-define('DB_USER', 'phoenixx_app');     // your database user
-define('DB_PASS', 'CHANGE_ME');        // your database password
+define('DB_NAME', 'Task');   // your database name
+define('DB_USER', 'Phoenixxit');     // your database user
+define('DB_PASS', 'Phoenixx@2026');        // your database password
 
 define('APP_NAME', 'Phoenixx Task Manager');
 
